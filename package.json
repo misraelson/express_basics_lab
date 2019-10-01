@@ -1,0 +1,26 @@
+{
+  "name": "car_status",
+  "version": "1.0.0",
+  "description": "Create a car status form using epress",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "nodemon",
+    "morgan"
+  ],
+  "author": "matthew",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  },
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  }
+}

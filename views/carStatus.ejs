@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs') %>
+  <% if (year) { %>
+    <div>
+      <% if (year <= 1970) { %>
+        <h1> The year of your car is: <%= year %>.Your car is ==> VERY OLD </h1>
+      <% } else if ( year <= 2000 ) { %>
+        <h1> The year of your car is: <%= year %>. Your car is ==> OLD </h1>
+      <% } else if ( year <= 2019 ) { %>
+        <h1> The year of your car is: <%= year %>. Your car is ==> NEW </h1>
+      <% } else if ( year <= 2025 ) { %>
+        <h1> The year of your car is: <%= year %>. Your car is ==> FUTURE </h1>
+      <% } else { %>
+        <h1> The year of your car is: <%= year %> SUPER FUTURE </h1>
+      <% } %> 
+    </div>
+    <%- include('./partials/form_partial.ejs') %>
+  <% } else { %>
+    <%- include('./partials/form_partial.ejs') %>
+  <% } %>
+  
+<%- include('./partials/footer.ejs') %>

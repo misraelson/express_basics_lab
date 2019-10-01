@@ -1,0 +1,14 @@
+<h1>Enter Your Car Model Year</h1>
+  
+    <form action="/form_submit">
+      <div>
+        <label for="year">What is your vehicles Year?</label>
+        <!-- <input type="text" id="year" name="year" /> -->
+        <select id="year" name="year">
+          <% for (let i = 1950; i < 2025; i++) { %>
+            <option value="<%= i %>"> <%= i %> </option>
+          <% } %>
+        </select>
+      </div>
+      <input type='submit' value='send'/>
+    </form>
