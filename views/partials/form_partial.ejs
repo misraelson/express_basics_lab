@@ -1,8 +1,8 @@
-<h1>Enter Your Car Model Year</h1>
-  
+<div style="margin: 20px; padding: 20px; border: solid 10px black"> 
+  <h1>Car Model Judger:</h1>
     <form action="/form_submit">
       <div>
-        <label for="year">What is your vehicles Year?</label>
+        <label for="year">What year is your vehicle?</label>
         <!-- <input type="text" id="year" name="year" /> -->
         <select id="year" name="year">
           <% for (let i = 1950; i < 2025; i++) { %>
@@ -10,5 +10,6 @@
           <% } %>
         </select>
       </div>
-      <input type='submit' value='send'/>
+      <input type='submit' value='SUBMIT' style="background-color: orangered; width: 100px; height: 50px; text-align: center; text-size: 20px; margin: 20px;"/>
     </form>
+</div>
