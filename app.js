@@ -52,13 +52,33 @@ App.get('/fizz_buzz', (request, response) => {
 App.get('/fizz_buzz_form_submit', (request, response) => {
   const params = request.query;
   const { number1, number2 } = params
-  
-
-  
   response.render('fizzBuzz', {
     number1,
     number2,
   });
+});
+//requiring path and fs modules
+//joining path of directory 
+
+App.get('/directory_lister', (request, response) => {
+  const fs = require('fs');
+  const path = require('path');
+  const directoryPath = path.join(__dirname);
+  console.log("DirectoryPath", directoryPath)
+  fs.readdir(directoryPath, function (err, files) {
+    //handling error
+    if (err) {
+        return console.log('Unable to scan directory: ' + err);
+    } 
+    //listing all files using forEach
+    files.forEach(function (file) {
+        // Do whatever you want to do with the file
+        console.log(file); 
+    });
+});
+  response.render('directoryLister', {
+    path: directoryPath
+  })
 })
 
 const PORT=4545;
