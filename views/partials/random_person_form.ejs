@@ -1,0 +1,14 @@
+<div style="margin: 20px; padding: 20px; border: solid 10px black"> 
+  <h1>Enter List Of Names:</h1>
+    <form action="/random_person_form_submit">
+      <div>
+        <label for="names">Names</label>
+        <% if (names) { %>
+          <textarea id='names' name='names' cols='60' rows='5'> <%= names %></textarea>
+        <% } else { %>
+          <textarea id='names' name='names' cols='60' rows='5'></textarea>
+        <% } %>
+      </div>
+      <input type='submit' value='SUBMIT' style="background-color: orangered; width: 100px; height: 50px; text-align: center; text-size: 20px; margin: 20px;"/>
+    </form>
+</div>

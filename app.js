@@ -15,9 +15,28 @@ App.get('/car_status', (request, response) => {
   });
 });
 
-App.get('/form_submit', (request, response) => {
+App.get('/random_person', (request, response) => {
+  response.render('randomPerson', {
+    person: null,
+    names: null,
+  })
+})
+
+App.get('/random_person_form_submit', (request, response) => {
   const params = request.query;
-  console.log('params', params);
+  const { names } = params
+  const namesArray = names.trim().split(',')
+  let num = Math.round(Math.random() * (namesArray.length -1))
+  let person = namesArray[num];
+  response.render('randomPerson', {
+    person,
+    names: names.trim(),
+  });
+})
+
+
+App.get('/car_year_form_submit', (request, response) => {
+  const params = request.query;
   const { year } = params
   response.render('carStatus', {
     year,
