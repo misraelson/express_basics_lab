@@ -15,6 +15,14 @@ App.get('/car_status', (request, response) => {
   });
 });
 
+App.get('/car_year_form_submit', (request, response) => {
+  const params = request.query;
+  const { year } = params
+  response.render('carStatus', {
+    year,
+  });
+})
+
 App.get('/random_person', (request, response) => {
   response.render('randomPerson', {
     person: null,
@@ -34,15 +42,24 @@ App.get('/random_person_form_submit', (request, response) => {
   });
 })
 
-
-App.get('/car_year_form_submit', (request, response) => {
-  const params = request.query;
-  const { year } = params
-  response.render('carStatus', {
-    year,
-  });
+App.get('/fizz_buzz', (request, response) => {
+  response.render('fizzBuzz', {
+    number1: null,
+    number2: null,
+  })
 })
 
+App.get('/fizz_buzz_form_submit', (request, response) => {
+  const params = request.query;
+  const { number1, number2 } = params
+  
+
+  
+  response.render('fizzBuzz', {
+    number1,
+    number2,
+  });
+})
 
 const PORT=4545;
 const ADDRESS='127.0.0.1';

@@ -1,0 +1,19 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/fizz_buzz_form.ejs') %>
+<div style="margin: 20px">
+  <% if (number1 && number2) { %>
+    <h1> Here are the Fizzy Buzzy Numbers: </h1>
+    <% for (let i=1; i<=100; i++) { %>
+      <% if (i % number1 === 0 && i % number2 === 0) { %>
+        <p>FIZZBUZZ</p>
+      <% } else if (i % number1 === 0) { %>
+          <p>FIZZ</p>
+      <% } else if (i % number2 === 0) {%>
+          <p>Buzz</p>
+      <% } else { %>
+        <p><%= i %></p>
+      <% } %>
+    <% } %>  
+  <% } else null %>
+</div>
+<%- include('./partials/footer.ejs') %>
